@@ -1,0 +1,30 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class rectangle{
+    public:
+      int length;
+      int breadth;
+      
+        int area(){
+            return length*breadth;
+        }
+        int perimeter(){
+            return 2*(length+breadth);
+        }
+    
+};
+
+int main() {
+    // Write C++ code here
+    rectangle r1,r2;
+    r1.length=20;
+    r1.breadth=10;
+    r2.length=15;
+    r2.breadth=25;
+    cout<<"detail about rectangle 1=>"<<"area:-"<<r1.area()<<" "<<"perimeter:-  "<<r1.perimeter()<<endl;
+    cout<<"detail about rectangle 2=>"<<"area:-"<<r2.area()<<" "<<"perimeter:-  "<<r2.perimeter()<<endl;
+    
+
+    return 0;
+}
