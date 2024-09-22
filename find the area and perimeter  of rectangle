@@ -1,30 +1,57 @@
 #include <iostream>
-#include<bits/stdc++.h>
 using namespace std;
-class rectangle{
-    public:
-      int length;
-      int breadth;
-      
-        int area(){
-            return length*breadth;
-        }
-        int perimeter(){
-            return 2*(length+breadth);
-        }
-    
+
+class Rectangle {
+private:
+    int length;
+    int breadth;
+
+public:
+    // Set length with validation
+    int setLength(int l) {
+        length = (l >= 0) ? l : 0;
+        return length;
+    }
+
+    // Set breadth with validation
+    int setBreadth(int b) {
+        breadth = (b >= 0) ? b : 0;
+        return breadth;
+    }
+
+    // Get length
+    int getLength() {
+        return length;
+    }
+
+    // Get breadth
+    int getBreadth() {
+        return breadth;
+    }
+
+    // Calculate area
+    int area() {
+        return length * breadth;
+    }
+
+    // Calculate perimeter
+    int perimeter() {
+        return 2 * (length + breadth);
+    }
 };
 
 int main() {
-    // Write C++ code here
-    rectangle r1,r2;
-    r1.length=20;
-    r1.breadth=10;
-    r2.length=15;
-    r2.breadth=25;
-    cout<<"detail about rectangle 1=>"<<"area:-"<<r1.area()<<" "<<"perimeter:-  "<<r1.perimeter()<<endl;
-    cout<<"detail about rectangle 2=>"<<"area:-"<<r2.area()<<" "<<"perimeter:-  "<<r2.perimeter()<<endl;
-    
+    Rectangle r1;
+    int x = 5;
+    int y = 10;
+
+    r1.setLength(x);
+    r1.setBreadth(y);
+
+    cout << "Length is: " << r1.getLength() << endl;
+    cout << "Breadth is: " << r1.getBreadth() << endl;
+    cout << "Area is: " << r1.area() << endl;
+    cout << "Perimeter is: " << r1.perimeter() << endl;
 
     return 0;
 }
