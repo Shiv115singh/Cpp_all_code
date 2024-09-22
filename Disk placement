@@ -1,0 +1,44 @@
+//You are given n disks and your task is to split them between two stands or towers such that the product of the number of disks in each tower is maximized. Formally, if the first tower contains a disks and the second tower contains b disks, you need to maximize the product a *b, where a+b=n
+
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+
+class Solution {
+  public:
+    long long maxProduct(int n) {
+        // code here
+        long long int i,j;
+        i=n/2;
+        j=i+1;
+        if(i+j==n){
+            return i*j;
+        }else{
+            j--;
+            return i*j;
+        }
+    }
+};
+
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    scanf("%d ", &t);
+    while (t--) {
+
+        int n;
+        scanf("%d", &n);
+
+        Solution obj;
+        long long res = obj.maxProduct(n);
+
+        cout << res << endl;
+    }
+}
+
+// } Driver Code Ends
