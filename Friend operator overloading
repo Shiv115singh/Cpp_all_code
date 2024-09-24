@@ -1,0 +1,30 @@
+                                                              Friend operator overloading
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class Complex{
+    private:
+      int real;
+      int imag;
+    public:
+      Complex(int R=0,int I=0){
+          real=R;
+          imag=I;
+      }
+      int display(){
+          cout<<real<<"+ "<<"i"<<imag<<endl;
+          return 0;
+      }
+      friend Complex operator+(Complex c1,Complex c2);
+};
+Complex operator+(Complex c1,Complex c2){
+    Complex t;
+    t.real=c1.real+c2.real;
+    t.imag=c1.imag+c2.imag;
+    return t;
+}
+int main(){
+    Complex c1(10,5),c2(13,6),c3;
+    c3=c1+c2;
+    c3.display();
+}
