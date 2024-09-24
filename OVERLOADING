@@ -1,0 +1,28 @@
+                                                            OVERLOADING
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+class Complex
+{
+    public:
+     int real;
+     int imag;
+     
+     Complex add(Complex c){
+         Complex temp;
+         temp.real=real+c.real;
+         temp.imag=imag+c.imag;
+         return temp;
+     }
+};
+int main(){
+    Complex c1,c2,c3;
+    c1.real=10;
+    c1.imag=20;
+    c2.real=5;
+    c2.imag=30;
+    c3=c1.add(c2);
+    cout<<c3.real<<"+ "<<"i"<<c3.imag;
+    return 0;
+}
