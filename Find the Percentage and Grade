@@ -1,0 +1,82 @@
+Create Find the Percentage of marks and based on percentage give marks Grade 
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class student
+{
+  private:
+   int roll_no;
+   string name;
+   int math;
+   int science;
+   int English;
+   int history;
+   int S_S_T;
+  public:
+   void Setinput(int r,string Na,int m,int s,int e,int h,int sst){
+       roll_no=r;
+       name=Na;
+       math=m;
+       science=s;
+       English=e;
+       history=h;
+       S_S_T=sst;
+   }
+   int subsum(){
+       return math+science+English+history+S_S_T;
+   }
+   float percentage(){
+       return (subsum()/5);
+   }
+   string grade(){
+       if(percentage()>=90){
+           return "O";
+       }else if(80<=percentage()<90){
+           return "A+";
+       }else if(70<=percentage()<80){
+           return "A";
+       }else if(60<=percentage()<70){
+           return "B+";
+       }else if(50<=percentage()<60){
+           return "B";
+       }else if(40<=percentage()<50){
+           return "C";
+       }else if(35<=percentage()<40){
+           return "D";
+       }else {
+           return "F";
+   }
+}
+};
+
+int main() {
+    // Write C++ code here
+    int N;
+    cout<<"Enter the number of Student:-";
+    cin>>N;
+    string name;
+    int R,M,S,E,H,SST;
+    student s[N];
+     cout<<"Enter Student detail:-  "<<endl;
+     for(int i=1;i<=10;i++){
+         cout<<i <<endl;
+         cout<<"Enter Roll.No: ";
+         cin>>R;
+         cout<<"Enter Name: ";
+         cin>>name;
+         cout<<"Enter Maths marks: ";
+         cin>>M;
+         cout<<"Enter Science marks: ";
+         cin>>S;
+         cout<<"Enter English marks: ";
+         cin>>E;
+         cout<<"Enter History marks: ";
+         cin>>H;
+         cout<<"Enter S.S.T marks: ";
+         cin>>SST;
+         s[i].Setinput(R,name,M,S,E,H,SST);
+         cout<<"The percentage is "<<s[i].percentage()<<" ";
+         cout<<"The Grade is "<<s[i].grade()<<" "<<endl;
+     }
+    return 0;
+}
