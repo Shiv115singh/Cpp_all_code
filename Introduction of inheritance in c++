@@ -1,0 +1,24 @@
+// introduction of inhertiance in c++
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class base{
+    public:
+    int a;
+    void display(){
+        cout<<"my name is shivam singh"<< " "<<a<<endl;
+    }
+};
+class nhence:public base{
+    public :
+    void show(){
+        cout<<"show the nhence";
+    }
+};
+int main(){
+    nhence d;
+    d.a=100;
+    d.display();
+    d.show();
+    return 0;
+}
