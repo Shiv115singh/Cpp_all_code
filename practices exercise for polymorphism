@@ -1,0 +1,60 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class shape{
+  public:    
+    virtual float area()=0;
+    virtual float perimeter()=0;
+};
+class rectangle:public shape{
+    private:
+     float length;
+     float breadth;
+    public:
+     rectangle(){
+         length=1;
+         breadth=1;
+     }
+     rectangle(float l,float b){
+         length=l;
+         breadth=b;
+     }
+     rectangle(rectangle &r){
+         length=r.length;
+         breadth=r.breadth;
+     }
+     float area(){
+         cout<< "the area of rectangle is :-  "<<length*breadth<<endl;
+         return 0;
+     }
+     float perimeter(){
+         cout<< "the perimeter of rectangle is:-  "<<2*(length+breadth)<<endl;
+         return 0;
+     }
+};
+class circle:public shape{
+  private:
+   float radius;
+  public:
+   circle(float r){
+       radius=r;
+   }
+   float area(){
+         cout<< "the area of circle is :-  "<<3.14*radius*radius<<endl;
+         return 0;
+     }
+     float perimeter(){
+         cout<< "the perimeter of circle is:-  "<<2*3.14*radius<<endl;
+         return 0;
+     }
+};
+int main(){
+    rectangle(10,5);
+    shape *s=new rectangle();
+    s->area();
+    s->perimeter();
+    s=new circle(5);
+    s->area();
+    s->perimeter();
+    return 0;
+}
