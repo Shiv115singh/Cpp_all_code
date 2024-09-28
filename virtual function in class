@@ -1,0 +1,25 @@
+/*if virtual is not there then it call base function but now it call derived class */
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class base{
+    public:
+     virtual void fun1(){
+         cout<<"this is base class"<<endl;
+     }
+};
+class derive:public base{
+    public:
+     void fun1(){
+         cout<<"this is derive class"<<endl;
+     }
+};
+
+int main() {
+    base *p=new derive();
+    p->fun1();//output:=this is derive class
+    return 0;
+}
+
+
+/*---------Output is:--this is derive class----*/
