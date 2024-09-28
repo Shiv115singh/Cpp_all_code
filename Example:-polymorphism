@@ -1,0 +1,36 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class car{
+    public:
+     virtual void start()=0;
+     virtual void stop()=0;
+};
+class innova:public car{
+    public:
+     void start(){
+         cout<<"innova is start"<<endl;
+     }
+     void stop(){
+         cout<<"innova is stop"<<endl;
+     }
+};
+class swift:public car{
+    public:
+     void start(){
+         cout<<"swift is start"<<endl;
+     }
+     void stop(){
+         cout<<"swift is stop"<<endl;
+     }
+};
+
+int main() {
+    car *c=new innova();
+    c->start();  //Output is:-innova is start
+    c->stop();   //Output is:-innova is stop
+    c=new swift();
+    c->start();  //Output is:-swift is start
+    c->stop();   //Output is:-swift is stop
+    return 0;
+}
