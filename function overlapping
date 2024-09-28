@@ -1,0 +1,20 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class base{
+    public:
+     void fun1(){
+         cout<<"this is base class"<<endl;
+     }
+};
+class derive:public base{
+    public:
+     void fun1(){
+         cout<<"this is derive class"<<endl;
+     }
+};
+
+int main() {
+    derive d;
+    d.fun1();//output:=this is derive class
+    
