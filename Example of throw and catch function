@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a,b,c;
+    cin>>a>>b;
+    try{
+        if(b==0){   //if it is execute then then break the paragraph and directly went catch and print output
+            throw 10;
+        }
+    c=a/b;
+    cout<<"the ans is "<<c;
+    }
+    catch(int e){
+        cout<<"inside code error is there";
+    }
+
+    return 0;
+}
