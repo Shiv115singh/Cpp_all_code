@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+int division(int a,int b){
+    if(b==0){
+        throw 1;
+    }
+    return a/b;
+}
+
+int main() {
+    // Write C++ code here
+     int a,b,c;
+     cout<<"Type thr inputs;"<<endl;
+     cin>>a>>b;
+     try{
+         c=division(a,b);
+         cout<<"the output is "<<c;
+     }
+     catch (int e){
+         cout<<"the code is error";
+     }
+
+    return 0;
+}
