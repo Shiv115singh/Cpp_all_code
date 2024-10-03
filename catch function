@@ -1,0 +1,25 @@
+#include <iostream>
+#include <exception> // Include the exception header
+using namespace std;
+
+
+int main() {
+   try{
+       throw 1;
+       //int throw class is will print any one only
+      // throw 1.5;
+       
+      // throw string("my name is khan");
+   }
+   catch(int e){
+       cout<<"it id Integer"<<endl;
+   }
+  /* catch(float e){
+       cout<<"it id float"<<endl;
+   }*/
+  /* catch(...){
+       cout<<"It is any type"<<endl;
+      }*/
+
+    return 0;
+}
