@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+#define PI 3.14
+#define  sql(x) x*x
+#define  c cout
+#ifndef   PI
+   #define PI 3.14
+#endif
+
+int main() {
+    int a,A;
+    cout<<"enter the input";
+    cin>>a;
+    A=2*PI*sql(a);
+    c<<A<<endl;
+}
