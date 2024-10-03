@@ -1,0 +1,20 @@
+// when we have multiple same function in a program or project or we have to use different place different thing then we are using this type of function
+#include <iostream>
+using namespace std;
+namespace first{
+    void fun(){
+        cout<<"FIRST"<<endl;
+    }
+}
+namespace second{
+    void fun(){
+        cout<<"SECOND";
+    }
+}
+using namespace first;  //here i am declaring the global function first
+int main() {
+   
+   // first::fun();
+       fun();
+    second::fun();
+}
