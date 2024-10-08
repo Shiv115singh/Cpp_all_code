@@ -1,0 +1,57 @@
+//find the GCD of two number
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int gcdofnum(int num1,int num2){
+   if(num2==0){
+       return num1;
+   }else
+       return gcdofnum(num2,num1%num2);
+   
+   
+}
+///////////////////////////////////////////////////////////
+/*int gcdofnum(int num1,int num2){
+   while(num1!=num2){
+       if(num1>num2){
+           num1=num1-num2;
+       }else{
+           num2=num2-num1;
+       }
+   }
+   return num1;
+   
+}*/
+/*///////////////////////output is 
+the numbers are 10
+20
+10
+*/
+////////////////////////////////////////////////////////////////////
+
+/*int gcdofnum(int num1,int num2){
+    int res=min(num1,num2);
+    while(res>0){
+        if(num1%res==0 && num2%res==0){
+            break;
+        }
+        res--;
+    }
+    return res;
+   
+}*/
+
+/*///////////////////////output is 
+the numbers are 10
+20
+10
+*/
+    
+
+int main() {
+    int count=0;
+    int number1,number2;
+    cout<<"the numbers are ";
+    cin>>number1>>number2;
+    cout<<gcdofnum(number1,number2);
+}
