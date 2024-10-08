@@ -1,0 +1,27 @@
+//The number is polindrome is or not
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool isnum(int num){
+    int rev;
+    int temp=num;
+    int dig=0;
+    while(temp!=0){
+        rev=temp%10;
+        dig=dig*10+rev;
+        temp=temp/10;
+    }
+    return (dig==num);
+}
+int main() {
+    int number;
+    cout<<"the number is ";
+    cin>>number;
+    bool h=isnum(number);
+    if(h==1){
+        cout<<"The num is polindrom";
+    }else{
+        cout<<"The num is not polindrom";
+    }
+    return 0;
+}
