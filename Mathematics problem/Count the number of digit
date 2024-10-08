@@ -1,0 +1,19 @@
+//count the digit in given number
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int countnum(int num){
+    int dig=0;
+    while(num!=0){
+        num=num/10;
+        dig++;
+    }
+    return dig;
+}
+int main() {
+    int number;
+    cout<<"the number is ";
+    cin>>number;
+    cout<<"In the number the digit is "<<countnum(number);
+    return 0;
+}
