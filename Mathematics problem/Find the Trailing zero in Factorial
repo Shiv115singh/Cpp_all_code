@@ -1,0 +1,23 @@
+//Find the Trailing zero in Factorial
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int fact(int num){
+    if(num==0){
+        return 1;
+    }
+    return num*fact(num-1);
+}
+int main() {
+    int count=0;
+    int number;
+    cout<<"the number is ";
+    cin>>number;
+    int h=fact(number);
+    while((h%10)==0){
+        count++;
+        h=h/10;
+    }
+    cout<<count;
+    return 0;
+}
