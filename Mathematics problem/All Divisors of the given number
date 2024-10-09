@@ -5,7 +5,7 @@ using namespace std;
 //////////////////// This is efficient solution ///////////////////////////////
 void Divisors(int num){
     int i;
-    cout<<"The divisoir of "<<num<<" is ";
+    cout<<"The divisor of "<<num<<" are ";
     for(i=1;i*i<=num;i++){
         if(num%i==0){
             cout<<i<<" ";
@@ -17,7 +17,7 @@ void Divisors(int num){
 }
 /////////// This is efficient solution(this is not a perfect order) ///////////
 /*void Divisors(int num){
-    cout<<"The divisoir of "<<num<<" is ";
+    cout<<"The divisor of "<<num<<" are ";
     for(int i=1;i*i<=num;i++){
         if(num%i==0){
             cout<<i<<" ";
