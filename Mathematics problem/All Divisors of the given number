@@ -1,0 +1,48 @@
+//Find the All Divisior of the given number
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+//////////////////// This is efficient solution ///////////////////////////////
+void Divisors(int num){
+    int i;
+    cout<<"The divisoir of "<<num<<" is ";
+    for(i=1;i*i<=num;i++){
+        if(num%i==0){
+            cout<<i<<" ";
+        }
+    }
+    for(;i>=1;i--){
+        cout<<num/i<<" ";
+    }
+}
+/////////// This is efficient solution(this is not a perfect order) ///////////
+/*void Divisors(int num){
+    cout<<"The divisoir of "<<num<<" is ";
+    for(int i=1;i*i<=num;i++){
+        if(num%i==0){
+            cout<<i<<" ";
+            cout<<num/i<<" ";
+        }
+    }
+}*/
+/*///the output is The number is 12
+The divisoir of 12is 1 12 2 6 3 4 ///*/
+
+
+
+
+//////////////////// This is Naive solution ////////////////////////////////
+/*void Divisors(int num){
+    cout<<"The divisoir of "<<num<<"is ";
+    for(int i=1;i<=num;i++){
+        if(num%i==0){
+            cout<<i<<" ";
+        }
+    }
+}*/
+int main(){
+    int number;
+    cout<<"The number is ";
+    cin>>number;
+    Divisors(number);
+}
