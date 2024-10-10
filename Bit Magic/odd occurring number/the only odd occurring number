@@ -1,0 +1,25 @@
+// find the only odd occurring number
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void oddocc(int arr[],int n){
+   int res=arr[0];
+   for(int i=1;i<n;i++){
+       res=res^arr[i];
+   }
+   cout<< res;
+}
+
+
+int main() {
+    int num;
+    cout<<"The number are ";
+    cin>>num;
+    int arr[num];
+    for(int i=0;i<num;i++){
+        cin>>arr[i];
+    }
+    oddocc(arr,num);
+
+    return 0;
+}
