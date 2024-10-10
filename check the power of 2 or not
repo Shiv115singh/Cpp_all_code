@@ -1,0 +1,30 @@
+// check the power of 2 or not
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool cp2(int n){
+    if(n==0)return false;
+    while(n>1){
+        if(n%2==0){
+            n=n/2;
+        }else{
+            return false;
+        }
+    }
+    return true;
+}
+
+
+int main() {
+    int num;
+    cout<<"The number are ";
+    cin>>num;
+    int h=cp2(num);
+    if(h==0){
+            cout<<"False";
+        }else{
+            cout<<"True";
+        }
+
+    return 0;
+}
