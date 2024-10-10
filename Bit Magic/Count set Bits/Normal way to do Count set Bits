@@ -1,0 +1,22 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void setbit(int num){
+    int count=0;
+    while(num>0){
+        if(num%2==1){
+            num=num-pow(2,count);
+            count++;
+        }else{
+            num=num/2;
+        }
+    }
+    cout<<count;
+}
+int main() {
+    int number;
+    cout<<"The number is ";
+    cin>>number;
+    setbit(number);
+    return 0;
+}
