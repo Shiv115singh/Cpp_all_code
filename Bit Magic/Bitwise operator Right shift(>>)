@@ -1,0 +1,18 @@
+//Bitwise operator Right shift(>>)
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int a,b;
+    cout<<"The numbers are ";
+    cin>>a>>b;
+    cout<<"Right shift one time ";
+    cout<<(a>>1)<<endl;
+    cout<<"given b time right shift ";
+    cout<<(a>>b);
+    return 0;
+}
+/*The numbers are 5
+2
+Right shift one time 2
+given b time right shift 1*/
