@@ -1,0 +1,33 @@
+//You are given two numbers A and B. The task is to count the number of bits needed to be flipped to convert A to B.
+#include <iostream>
+using namespace std;
+   
+ int countBitsFlip(int m, int n)
+       
+    {
+        
+        // Your logic here
+        int count=0;
+        while(m!=n){
+            if((m&1)==(n&1)){
+                m=m>>1;
+                n=n>>1;
+            }else{
+                if((m&1)==1){
+                   m=m-1; 
+                }else{
+                    m=m+1;
+                }
+                count++;
+            }
+        }
+        return count;
+    }
+int main() {
+    int n,m;
+    cout<<"the numbers is";
+    cin>>n>>m;
+    cout<<countBitsFlip(m,n);
+
+    return 0;
+}
