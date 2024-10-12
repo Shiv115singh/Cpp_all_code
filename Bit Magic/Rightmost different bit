@@ -1,0 +1,29 @@
+//find the Rightmost different bit
+#include <iostream>
+using namespace std;
+   
+ int posOfRightMostDiffBit(int m, int n)
+       
+    {
+        // Your code here
+        int count=1;
+        if(m==n)cout<< -1;
+        while((m>0)&&(n>0)){
+            if((m&1)==(n&1)){
+                count++;
+            }else{
+                return count;
+            }
+            m=m>>1;
+            n=n>>1;
+        }
+         return count;
+    }
+int main() {
+    int n,m;
+    cout<<"the numbers is";
+    cin>>n>>m;
+    cout<<posOfRightMostDiffBit(m,n);
+
+    return 0;
+}
