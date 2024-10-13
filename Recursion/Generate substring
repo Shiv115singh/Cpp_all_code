@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void substr(string str, string curr = "", int index = 0) {
+    if (index == str.length()) {
+        if (!curr.empty()) { // Only print non-empty substrings
+            cout << curr << endl;
+        }
+        return;
+    }
+
+    // Exclude the current character
+    substr(str, curr, index + 1);
+
+    // Include the current character
+    substr(str, curr + str[index], index + 1);
+}
+
+int main() {
+    string n;
+    cout << "Enter the string: ";
+    cin >> n;
+    cout << "All possible substrings are:" << endl;
+    substr(n);
+
+    return 0;
+}
