@@ -1,0 +1,19 @@
+// print 1 to N using Recursion
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void printser(int n){
+    if(n==0){
+        return ;
+    }
+   printser(n-1);
+    cout<<n<<" ";
+}
+int main() {
+    int n;
+    cout<<"The number is ";
+    cin>>n;
+    printser(n);
+
+    return 0;
+}
