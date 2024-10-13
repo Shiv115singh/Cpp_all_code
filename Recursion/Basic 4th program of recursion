@@ -1,0 +1,24 @@
+//Basic 4th program of recursion
+#include <iostream>
+using namespace std;
+   void fun1(int n){
+       if(n==0){
+           return ;
+       }
+       fun1(n/2);
+       cout<<n%2<<endl; 
+       
+   }
+int main() {
+    int n;
+    cout<<"the number is ";
+    cin>>n;
+    fun1(n);
+
+    return 0;
+}
+////output is :
+/*the number is 7
+1
+1
+1*/
