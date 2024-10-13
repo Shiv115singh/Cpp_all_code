@@ -1,0 +1,38 @@
+#include <iostream>
+#include <algorithm> // for std::max
+using namespace std;
+
+int ropecutt(int num, int a, int b, int c) {
+    if (num == 0) {
+        return 0; // No pieces needed for length 0
+    }
+    if (num < 0) {
+        return -1; // Not possible to cut further
+    }
+
+    int resA = ropecutt(num - a, a, b, c);
+    int resB = ropecutt(num - b, a, b, c);
+    int resC = ropecutt(num - c, a, b, c);
+    
+    int res = max({resA, resB, resC});
+
+    if (res == -1) {
+        return -1; // No valid cuts
+    }
+    return res + 1; // Include the current cut
+}
+
+int main() {
+    int rodLength, lengthA, lengthB, lengthC;
+    cout << "Enter the length of the rod and the lengths of the pieces: ";
+    cin >> rodLength >> lengthA >> lengthB >> lengthC;
+
+    int result = ropecutt(rodLength, lengthA, lengthB, lengthC);
+    if (result == -1) {
+        cout << "It is not possible to cut the rod with the given lengths." << endl;
+    } else {
+        cout << "Maximum number of pieces: " << result << endl;
+    }
+
+    return 0;
+}
