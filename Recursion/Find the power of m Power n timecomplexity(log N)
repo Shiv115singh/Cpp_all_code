@@ -1,0 +1,26 @@
+// Find the power of m Power n timecomplexity(log N)
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+long long int power(int N,int R){
+    long ans=0;
+        int mod=1000000007;
+        if(R==0){
+            return 1;
+        }
+        if(R%2==0){
+            ans=power(N,R/2);
+            ans=(ans*ans)%mod;
+        }else{
+            ans=N%mod;
+            ans=(ans*power(N,R-1)%mod)%mod;
+        }
+        return ans%mod;
+}
+
+int main() {
+    int m,n;
+    cout<<"The numbers are ";
+    cin>>m>>n;
+    cout<<power(m,n);
+}
