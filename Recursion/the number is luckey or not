@@ -1,0 +1,27 @@
+//the number is luckey or not
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+ bool isLucky(int n,int i=2) {
+        // code here
+        if(n>=i){
+            if((n%i)==0){
+                return false;
+            }
+            n=n-(n/i);
+            i++;
+            return isLucky(n,i);
+     }else{
+         return true;
+     }
+    }
+
+int main() {
+    int num;
+    cout<<"The Binary Number is ";
+    cin>>num;
+    cout<<isLucky(num);
+
+    return 0;
+}
