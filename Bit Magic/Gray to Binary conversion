@@ -1,0 +1,25 @@
+//Gray to Binary conversion
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+ int grayToBinary(int n)
+    {
+        
+        // Your code here
+        int res=n;
+        while(n>0){
+            n=n>>1;
+            res=res^n;
+        }
+        return res;
+        
+    }
+
+int main() {
+    int num;
+    cout<<"The Binary Number is ";
+    cin>>num;
+    cout<<grayToBinary(num);
+
+    return 0;
+}
