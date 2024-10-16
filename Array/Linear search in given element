@@ -1,0 +1,34 @@
+// Linear search in given element
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int linsearch(int arr[],int n,int k){
+    for(int i=0;i<n;i++){
+        if(arr[i]==k){
+            return i+1;
+        }
+    }
+    return -1;
+}
+
+int main() {
+    int N,k;
+    cout<<"The length of array size is ";
+    cin>>N;
+    cout<<"The searching element is ";
+    cin>>k;
+    int arr[N];
+    cout<<"The array is ";
+    for(int i=0;i<N;i++){
+        cin>>arr[i];
+    }
+    
+    int index=linsearch(arr,N,k);
+    if(index>=1){
+        cout<<"The index where the element "<<k<<" is "<<index;
+    }else{
+        cout<<"Element is not there";
+    }
+
+    return 0;
+}
