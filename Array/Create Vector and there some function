@@ -1,0 +1,56 @@
+//Creating the Vector array and use the function of vector array
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    //Creating the vector array
+    vector<int>arr;
+    //inserting the element(push_back() the element)
+    for(int i=0;i<5;i++){
+        arr.push_back(i);
+    }
+    //print the size of array
+    cout<<arr.size()<<endl;
+    //check the array element are there or not
+    if(arr.empty()==false){
+        cout<<"Array is not empty"<<endl;
+    }else{
+        cout<<"Array is Empty"<<endl;
+    }
+    //output of begin and end
+    for(auto i=arr.begin();i!=arr.end();i++){
+        cout<<*i<<" ";
+    }
+    cout<<endl;
+    //insert at the begin
+    arr.emplace(arr.begin(),10);
+    //Print the first element of the array
+    cout<<"The first element of array is "<<arr[0]<<endl;
+    //insert at the last of the element
+    arr.emplace_back(20);
+    //print the length of the element
+    cout<<"The length of the element are "<<arr.size()<<endl;
+    int n=arr.size();
+    //Print the last element of the element
+    cout<<"The last element are "<<arr[n-1]<<endl;
+    //print the array 
+    for(auto i=arr.begin();i!=arr.end();i++){
+        cout<<*i<<" ";
+    }
+    cout<<endl;
+    //clear the element of the array
+    arr.clear();
+    cout<<"The size of array is "<<arr.size();
+    return 0;
+}
+
+
+/*output
+5
+Array is not empty
+0 1 2 3 4 
+The first element of array is 10
+The length of the element are 7
+The last element are 20
+10 0 1 2 3 4 20 
+The size of array is 0*/
