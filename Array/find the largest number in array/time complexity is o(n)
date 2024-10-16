@@ -11,7 +11,7 @@ int LargestNumber(int arr[],int n){
     int res=0;
     for(int i=1;i<n;i++){
         if(arr[i]>arr[res]){
-            res=i;
+            res=arr[i];
         }
     }
     return res;
@@ -23,6 +23,6 @@ int main(){
    int arr[N];
    cout<<"Inserting the array Element :- ";
    insertelement(arr,N);
-   cout<<"The largest Element index is :- ";
+   cout<<"The largest Element is :- ";
    cout<<LargestNumber(arr,N);
 }
