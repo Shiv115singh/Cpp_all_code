@@ -1,0 +1,36 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int N,pos,ele,n;
+    cout<<"The length of array is :- ";
+    cin>>N;
+    int arr[N];
+    cout<<"Type the array element :- ";
+    for(int i=0;i<N;i++){
+        cin>>arr[i];
+    }
+    cout<<"The Position of the element is :- ";
+    cin>>pos;
+    cout<<"The ele is :- ";
+    cin>>ele;
+    cout<<"Currently how many element are there :- ";
+    cin>>n;
+    cout<<"print the old array :- ";
+    for(int i=0;i<N;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    //inserting the element
+    for(int i=N;i>=pos-1;i--){
+        arr[i]=arr[i-1];
+    }
+    arr[pos-1]=ele;
+    cout<<"print the New array :- ";
+    for(int i=0;i<N;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    
+    return 0;
+}
