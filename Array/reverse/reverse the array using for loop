@@ -1,0 +1,31 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void insertelement(int arr[],int N){
+    //Inserting the array Element
+    for(int i=0;i<N;i++){
+        cin>>arr[i];
+    }
+}
+
+void reversearray(int arr[],int n){
+    int num=0;
+for(int i=0;i<n/2;i++){
+    num=arr[i];
+    arr[i]=arr[n-1-i];
+    arr[n-1-i]=num;
+}
+}
+int main(){
+   int N;
+   cout<<"The length of arrey is :-";
+   cin>>N;
+   int arr[N];
+   cout<<"Inserting the array Element :- ";
+   insertelement(arr,N);
+   reversearray(arr,N);
+   cout<<"The reverse array is :- ";
+   for(int i=0;i<N;i++){
+        cout<<arr[i]<<" ";
+    }
+}
