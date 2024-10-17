@@ -1,0 +1,52 @@
+#include <iostream>
+using namespace std;
+
+void createArray(int arr[], int n) {
+    cout << "Type all elements of the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+}
+
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl; // New line after printing the array
+}
+
+void moveZeroesToEnd(int arr[], int n) {
+    int count = 0; // Count of non-zero elements
+
+    // Move all non-zero elements to the front
+    for (int i = 0; i < n; i++) {
+        if (arr[i] != 0) {
+            arr[count++] = arr[i];
+        }
+    }
+
+    // Fill the remaining array with zeros
+    while (count < n) {
+        arr[count++] = 0;
+    }
+}
+
+int main() {
+    int N;
+    cout << "Enter the length of the array: ";
+    cin >> N;
+    
+    int arr[N]; // Note: Variable length arrays are not standard C++
+    
+    createArray(arr, N);
+    
+    cout << "The given array is: ";
+    printArray(arr, N);
+    
+    moveZeroesToEnd(arr, N);
+    
+    cout << "The updated array is: ";
+    printArray(arr, N);
+
+    return 0;
+}
