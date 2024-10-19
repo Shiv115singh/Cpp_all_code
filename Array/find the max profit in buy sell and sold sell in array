@@ -1,0 +1,39 @@
+//find the max profit in buy sell and sold sell in array
+#include <iostream>
+using namespace std;
+
+int maxProfit(int price[], int n) {
+    if (n <= 1) return 0;
+
+    int max_profit = 0;
+
+    // Iterate through the price array
+    for (int i = 1; i < n; i++) {
+        // If the current price is greater than the previous price,
+        // add the profit to max_profit
+        if (price[i] > price[i - 1]) {
+            max_profit += price[i] - price[i - 1];
+        }
+    }
+    return max_profit;
+}
+
+int main() {
+    int n;
+    cout << "The length of the array is: ";
+    cin >> n;
+    int arr[n];
+    cout << "Give all input in the array: ";
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+
+    cout << "The input array is: ";
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    cout << "The maximum profit is: " << maxProfit(arr, n) << endl;
+    return 0;
+}
