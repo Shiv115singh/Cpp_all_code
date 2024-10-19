@@ -1,0 +1,42 @@
+// left rotate in d time
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+int leftrotate(int arr[],int n,int d){
+    int temp[d];
+    for(int i=0;i<d;i++){
+        temp[i]=arr[i];
+    }
+    for(int i=0;i<(n-d);i++){
+        arr[i]=arr[i+d];
+    }
+    for(int i=(n-d);i<n;i++){
+        arr[i]=temp[i-(d+1)];
+    }
+    return n;
+}
+int main() {
+    int n,d;
+    cout<<"The length of the array is ";
+    cin>>n;
+    int arr[n];
+    cout<<"Give the all input in Array :- ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"the input array is ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    cout<<"give how many time rotate :- ";
+    cin>>d;
+    cout<<"left rotate by "<<d<<" position"<<endl;
+    cout<<"The final array is ";
+    leftrotate(arr,n,d);
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
