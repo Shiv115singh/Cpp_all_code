@@ -1,0 +1,33 @@
+// Find the leading element in array
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+void leadingarray(int arr[],int n){
+    int lead=arr[n-1];
+    cout<<lead<<" ";
+    for(int i=n-2;i>=0;i--){
+        if(arr[i]>lead){
+            lead=arr[i];
+            cout<<lead<<" ";
+        }
+    }
+    
+}
+int main() {
+    int n;
+    cout<<"The length of the array is ";
+    cin>>n;
+    int arr[n];
+    cout<<"Give the all input in Array :- ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"the input array is ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    cout<<"The leading arrey is :- ";
+    leadingarray(arr,n);
+    return 0;
+}
