@@ -1,0 +1,31 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int submaxsum(int arr[],int n){
+     int res=arr[0];
+     for(int i=0;i<n;i++){
+         int curr=0;
+         for(int j=i;j<n;j++){
+             curr=curr+arr[j];
+             res=max(res,curr);
+         }
+     }
+     return res;
+}
+int main(){
+    int n;
+    cout<<"The length of the string is:: ";
+    cin>>n;
+    int arr[n];
+    cout<<"Write the element of size of array "<<n<<" :: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"The array is :: ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    cout<<"sum of maximum subarray is "<<submaxsum(arr,n);
+    
+}
