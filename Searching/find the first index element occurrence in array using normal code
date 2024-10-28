@@ -1,7 +1,7 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-int binarysearch(int arr[],int n,int ele){
+int firstbinarysearch(int arr[],int n,int ele){
     int low=0,high=n-1;
     while(low<=high){
         int mid=((low+high)/2);
@@ -32,5 +32,5 @@ int main(){
     }
     cout<<endl;
     cout<<"The index of the element is ";
-    cout<<binarysearch(arr,n,ele);
+    cout<<firstbinarysearch(arr,n,ele);
 }
