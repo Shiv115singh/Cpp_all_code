@@ -1,0 +1,42 @@
+//two pointer approach based problem(Find the sum of subarray is equal to k(only to pair))
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool sumof(int arr[],int n,int k){
+    int i=0,j=n-1;
+    while(i<j){
+        if((arr[i]+arr[j])==k){
+            return true;
+        }else if((arr[i]+arr[j])<k){
+            i++;
+        }
+        else{
+                j--;
+            }
+    }
+   return false;
+}
+int main(){
+    int n,k;
+    cout<<"The length of arrey is ";
+    cin>>n;
+    cout<<"The value of k is ";
+    cin>>k;
+    int arr[n];
+    cout<<"The array element are ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"The array elemant are ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i]<<" ";
+    }
+    cout<<"sum of one of the subarray is k(only two pair) ";
+    int m=sumof(arr,n,k);
+    if(m==1){
+        cout<<"true";
+    }else{
+        cout<<"False";
+    }
+    return 0;
+}
