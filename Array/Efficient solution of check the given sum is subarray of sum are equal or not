@@ -1,0 +1,43 @@
+// check the given sum is subarray of sum are equal or not
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+bool subsum(int arr[],int n,int k){
+    int res=INT_MIN,curr=0,j=0;
+    for(int i=0;i<n;i++){
+        curr+=arr[i];
+        while(curr>k){
+            curr=curr-arr[j];
+            j++;
+        }if(curr==k){
+            return true;
+        }
+    }
+    
+    return false;
+}
+int main(){
+    int n,k;
+    cout<<"The length of array is ";
+    cin>>n;
+    cout<<"sum of the array is  ";
+    cin>>k;
+    int arr[n];
+    cout<<"Initilize The array  element are ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"The array  element are ";
+    for(int i=0;i<n;i++){
+        cout<<arr[i];
+    }
+    cout<<endl;
+    int check =subsum(arr,n,k);
+    if(check==1){
+        cout<<"Yes";
+    }else{
+        cout<<"NO";
+    }
+    
+    return 0;
+}
