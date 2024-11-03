@@ -1,0 +1,25 @@
+//search the reapeating element
+#include<iostream>
+#include<bits/stdc++.h> 
+using namespace std;
+int repele(int arr[],int n){
+    for(int i=0;i<n-1;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]==arr[j]){
+                return arr[i];
+            }
+        }
+    }
+    return -1;
+}
+int main(){
+    int n;
+    cout<<"The length if array is ";
+    cin>>n;
+    int arr[n];
+    cout<<"The array element are ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"The reapeating element is "<<repele(arr,n);
+}
