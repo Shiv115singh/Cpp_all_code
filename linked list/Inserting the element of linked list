@@ -1,0 +1,58 @@
+
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+struct node {
+    int data;
+    node *next;
+}*first;
+void create(int arr[],int n){
+    struct node *t,*last;
+    first=new node;
+    first->data=arr[0];
+    first->next=NULL;
+    last=first;
+    for(int i=1;i<n;i++){
+        t=new node;
+        t->data=arr[i];
+        t->next=NULL;
+        last->next=t;
+        last=t;
+    }
+}
+void print(struct node *p){
+    while(p!=0){
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+}
+void insert(struct node *p,int key,int element){
+    struct node *t=new node;
+    t->data=element;
+    t->next=NULL;
+    if(key==0){
+        t->next=first;
+        first=t;
+    }
+    for(int i=0;i<key-1;i++){
+        p=p->next;
+    }
+        t->next=p->next;
+        p->next=t;
+    
+}
+
+int main() {
+    int arr[]={1,2,3,4,5};
+    int n=5;
+    int key=2;
+    int element=10;
+    create(arr,n);
+    cout<<"Print the element of linked list ";
+    print(first);
+    insert(first,key,element);
+    cout<<endl<<"Print the updated linked list ";
+    print(first);
+
+    return 0;
+}
