@@ -1,0 +1,70 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+struct node{
+    int data;
+    node *next;
+}*first =NULL;
+void create(int arr[],int n){
+    struct node *t,*last;
+    first=new node;
+    first->data=arr[0];
+    first->next=NULL;
+    last=first;
+    for(int i=1;i<n;i++){
+        t=new node;
+        t->data=arr[i];
+        t->next=NULL;
+        last->next=t;
+        last=t;
+    }
+}
+int count(struct node *p){
+    int i=0;
+    while(p!=0){
+        i++;
+        p=p->next;
+    }
+    return i;
+}
+void print(node * p){
+    while(p!=0){
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+}
+int deletes(node *p,int index){
+    node *t;
+    int x;
+    if(index<1 || index>count(p)){
+        return 0;
+    }
+    if(index==0){
+        t=first;
+        x=first->data;
+        first=first->next;
+        delete t;
+        return x;
+    }else{
+        for(int i=0;i<index-1;i++){
+            t=p;
+            p=p->next;
+        }
+        t->next=p->next;
+        x=p->data;
+        delete p;
+        return x;
+    }
+}
+int main(){
+    int arr[]={1,2,3,4,5};
+    create(arr,5);
+    cout<<"The linked list is ";
+    print(first);
+    cout<<endl<<"The number of node is "<<count(first);
+    cout<<endl<<"The delete element is "<<deletes(first,2);
+    cout<<endl<<"Arter deleting the new linked list is  ";
+    print(first);
+    
+    return 0;
+}
