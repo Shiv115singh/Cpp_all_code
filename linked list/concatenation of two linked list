@@ -1,0 +1,78 @@
+#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+
+struct node {
+    int data;
+    node *next;
+} *first, *second, *third;
+
+void create1(int arr[], int n) {
+    node *p, *last;
+    first = new node;
+    first->data = arr[0];
+    first->next = NULL;
+    last = first;
+    for (int i = 1; i < n; i++) {
+        p = new node;
+        p->data = arr[i];
+        p->next = NULL;
+        last->next = p;
+        last = p;
+    }
+}
+
+void create2(int arr[], int n) {
+    node *p, *last;
+    second = new node;
+    second->data = arr[0];
+    second->next = NULL;
+    last = second;
+    for (int i = 1; i < n; i++) {
+        p = new node;
+        p->data = arr[i];
+        p->next = NULL;
+        last->next = p;
+        last = p;
+    }
+}
+
+void count(struct node *p) {
+    int i = 0;
+    while (p != NULL) {
+        i++;
+        p = p->next;
+    }
+    cout << i;  // Printing the number of nodes
+}
+
+struct node* Concatenation(struct node *first, struct node *second) {
+    if (first == NULL) return second;  // If the first list is empty, return second
+    struct node *curr = first;
+    while (curr->next != NULL) {  // Traverse to the last node of the first list
+        curr = curr->next;
+    }
+    curr->next = second;  // Link the last node of the first list to the second list
+    return first;  // Return the head of the first list
+}
+
+int main() {
+    int arr1[] = {1, 2, 3, 4, 5};
+    int arr2[] = {6, 7, 8, 9};
+    int n1 = 5;
+    int n2 = 4;
+    
+    create1(arr1, n1);  // Create first linked list
+    create2(arr2, n2);  // Create second linked list
+    
+    cout << "The first Linked List has "; 
+    count(first);  // Count nodes in first list
+    cout << endl << "The second Linked List has "; 
+    count(second);  // Count nodes in second list
+    
+    third = Concatenation(first, second);  // Concatenate the two lists
+    cout << endl << "After concatenation, the total number of nodes in the third list is "; 
+    count(third);  // Count nodes in the concatenated list
+    
+    return 0;
+}
