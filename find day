@@ -1,0 +1,23 @@
+//Find the before day if present day is given
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+int main() {
+    int today;
+    int day;
+    cout<<"Today is ";
+    cin>>today;
+    cout<<"Before ";
+    cin>>day;
+    cout<<"the day is ";
+    int x=day % 7;
+    int ans=today-x;
+    if(ans>0){
+        cout<<ans;
+    }else{
+        cout<<ans+7;
+    }
+
+    return 0;
+}
