@@ -1,0 +1,12 @@
+//Finding the last number
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num,ans;
+    cout<<"The number is ";
+    cin>>num;
+    ans=abs(num%10);
+    cout<<ans;
+    return 0;
+}
