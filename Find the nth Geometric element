@@ -1,0 +1,13 @@
+// find the nth Geometric element 
+#include<bits/stdc++.h>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int first,ratio,last,ans;
+    cout<<"The number is ";
+    cin>>first>>ratio>>last;;
+    ans=first*(int)(pow(ratio,last-1));
+    cout<<ans;
+    return 0;
+}
