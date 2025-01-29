@@ -1,0 +1,12 @@
+//Sum of N natural number
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num,ans;
+    cout<<"The number is ";
+    cin>>num;
+    ans=((num*(num+1))/2);
+    cout<<ans;
+    return 0;
+}
