@@ -1,0 +1,12 @@
+//Find the nth element of the Arithmetic progression
+#include <iostream>
+using namespace std;
+
+int main() {
+    int first,gap,last,ans;
+    cout<<"The number is ";
+    cin>>first>>gap>>last;;
+    ans=first+((last-1)*gap);
+    cout<<ans;
+    return 0;
+}
