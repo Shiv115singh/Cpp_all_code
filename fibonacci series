@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num,number_of_term,next_term=0;
+    cin>>number_of_term;
+    num=1;
+    for(int i=1;i<=number_of_term;i++){
+        int res=num+next_term;
+        cout<<res<<" ";
+        num=next_term;
+        next_term=res;
+        
+    }
+    return 0;
+} 
