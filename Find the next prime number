@@ -1,0 +1,23 @@
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+    int num,i;
+    cin>>num;
+    while(true){
+        num++;
+        for(i=2;i<=num;i++){
+            if(num%i==0){
+               break; 
+            }
+        }
+             
+        if(i==num){
+            cout<<i;
+            break;
+        }
+    }
+    return 0;
+}
