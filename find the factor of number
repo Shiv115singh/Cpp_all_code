@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 5595, x;
+    x = num;
+    
+    // Iterate over all numbers from 2 to num
+    for(int i = 2; i <= num; i++) {
+        // Check if i is a factor of x
+        while (x % i == 0) {
+            cout << i << " "; // Print the factor
+            x /= i; // Reduce x by dividing by the factor
+        }
+    }
+    return 0;
+} 
